@@ -38,6 +38,13 @@
 		84385725293B5456008371D2 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84385724293B5456008371D2 /* UIView+Extension.swift */; };
 		84F1984A293B64F5009BDC48 /* SkillModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F19848293B64F5009BDC48 /* SkillModel+CoreDataClass.swift */; };
 		84F1984B293B64F5009BDC48 /* SkillModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F19849293B64F5009BDC48 /* SkillModel+CoreDataProperties.swift */; };
+		84F1984E293B6675009BDC48 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F1984D293B6675009BDC48 /* CoreDataStack.swift */; };
+		84F19851293B69BC009BDC48 /* skills.json in Resources */ = {isa = PBXBuildFile; fileRef = 84F19850293B69BC009BDC48 /* skills.json */; };
+		84F19855293B710A009BDC48 /* SkillCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F19853293B710A009BDC48 /* SkillCell.swift */; };
+		84F19856293B710A009BDC48 /* SkillCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F19854293B710A009BDC48 /* SkillCell.xib */; };
+		84F19859293B7196009BDC48 /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F19858293B7196009BDC48 /* UICollectionView+Extensions.swift */; };
+		84F1985B293B7222009BDC48 /* EmployeeFormVC+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F1985A293B7222009BDC48 /* EmployeeFormVC+Extension.swift */; };
+		84F1985E293B7400009BDC48 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F1985D293B7400009BDC48 /* String+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +79,13 @@
 		84385724293B5456008371D2 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		84F19848293B64F5009BDC48 /* SkillModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SkillModel+CoreDataClass.swift"; sourceTree = "<group>"; };
 		84F19849293B64F5009BDC48 /* SkillModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SkillModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		84F1984D293B6675009BDC48 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		84F19850293B69BC009BDC48 /* skills.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = skills.json; sourceTree = "<group>"; };
+		84F19853293B710A009BDC48 /* SkillCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillCell.swift; sourceTree = "<group>"; };
+		84F19854293B710A009BDC48 /* SkillCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SkillCell.xib; sourceTree = "<group>"; };
+		84F19858293B7196009BDC48 /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
+		84F1985A293B7222009BDC48 /* EmployeeFormVC+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EmployeeFormVC+Extension.swift"; sourceTree = "<group>"; };
+		84F1985D293B7400009BDC48 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,6 +261,7 @@
 		84385703293B4497008371D2 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				84F1984C293B6658009BDC48 /* CoreData Stack */,
 				84F19846293B64DA009BDC48 /* Model */,
 				843856AA293B2FEA008371D2 /* EmployeesTask.xcdatamodeld */,
 			);
@@ -272,6 +287,8 @@
 		8438570A293B4A70008371D2 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				84F1985C293B73F1009BDC48 /* String */,
+				84F19857293B7134009BDC48 /* UICollectionview */,
 				84385723293B5444008371D2 /* UIView */,
 				84385720293B5414008371D2 /* UITextField */,
 				84385712293B4B8C008371D2 /* UIFont */,
@@ -309,6 +326,7 @@
 		84385716293B4DE4008371D2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				84F19852293B70B4009BDC48 /* Cell */,
 				8438571B293B4E4E008371D2 /* VC */,
 			);
 			path = View;
@@ -325,6 +343,7 @@
 		8438571B293B4E4E008371D2 /* VC */ = {
 			isa = PBXGroup;
 			children = (
+				84F1985A293B7222009BDC48 /* EmployeeFormVC+Extension.swift */,
 				8438571C293B4E69008371D2 /* EmployeeFormVC.swift */,
 				8438571D293B4E69008371D2 /* EmployeeFormVC.xib */,
 			);
@@ -350,6 +369,7 @@
 		84F19846293B64DA009BDC48 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				84F1984F293B691F009BDC48 /* Json */,
 				84F19847293B64E0009BDC48 /* Skills */,
 			);
 			path = Model;
@@ -362,6 +382,47 @@
 				84F19849293B64F5009BDC48 /* SkillModel+CoreDataProperties.swift */,
 			);
 			path = Skills;
+			sourceTree = "<group>";
+		};
+		84F1984C293B6658009BDC48 /* CoreData Stack */ = {
+			isa = PBXGroup;
+			children = (
+				84F1984D293B6675009BDC48 /* CoreDataStack.swift */,
+			);
+			path = "CoreData Stack";
+			sourceTree = "<group>";
+		};
+		84F1984F293B691F009BDC48 /* Json */ = {
+			isa = PBXGroup;
+			children = (
+				84F19850293B69BC009BDC48 /* skills.json */,
+			);
+			path = Json;
+			sourceTree = "<group>";
+		};
+		84F19852293B70B4009BDC48 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				84F19853293B710A009BDC48 /* SkillCell.swift */,
+				84F19854293B710A009BDC48 /* SkillCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		84F19857293B7134009BDC48 /* UICollectionview */ = {
+			isa = PBXGroup;
+			children = (
+				84F19858293B7196009BDC48 /* UICollectionView+Extensions.swift */,
+			);
+			path = UICollectionview;
+			sourceTree = "<group>";
+		};
+		84F1985C293B73F1009BDC48 /* String */ = {
+			isa = PBXGroup;
+			children = (
+				84F1985D293B7400009BDC48 /* String+Extension.swift */,
+			);
+			path = String;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -435,9 +496,11 @@
 				8438571F293B4E69008371D2 /* EmployeeFormVC.xib in Resources */,
 				843856C2293B34CC008371D2 /* Localizable.strings in Resources */,
 				843856B1293B2FEB008371D2 /* LaunchScreen.storyboard in Resources */,
+				84F19856293B710A009BDC48 /* SkillCell.xib in Resources */,
 				843856BD293B3345008371D2 /* Colors.xcassets in Resources */,
 				843856AE293B2FEB008371D2 /* Images.xcassets in Resources */,
 				8438570E293B4ADA008371D2 /* Cairo-Bold.ttf in Resources */,
+				84F19851293B69BC009BDC48 /* skills.json in Resources */,
 				843856EF293B3F6B008371D2 /* SearchListVc.xib in Resources */,
 				8438570F293B4ADA008371D2 /* Cairo-SemiBold.ttf in Resources */,
 			);
@@ -497,8 +560,10 @@
 				843856FC293B42A8008371D2 /* BaseViewModel.swift in Sources */,
 				84385714293B4BA0008371D2 /* UIFont+Extension.swift in Sources */,
 				84385706293B44E6008371D2 /* SearchListViewModel.swift in Sources */,
+				84F1985E293B7400009BDC48 /* String+Extension.swift in Sources */,
 				84F1984A293B64F5009BDC48 /* SkillModel+CoreDataClass.swift in Sources */,
 				8438571E293B4E69008371D2 /* EmployeeFormVC.swift in Sources */,
+				84F1985B293B7222009BDC48 /* EmployeeFormVC+Extension.swift in Sources */,
 				84385709293B49A6008371D2 /* MainCustomButton.swift in Sources */,
 				8438571A293B4E2D008371D2 /* EmployeeFormViewModel.swift in Sources */,
 				843856EE293B3F6B008371D2 /* SearchListVc.swift in Sources */,
@@ -508,7 +573,10 @@
 				84385725293B5456008371D2 /* UIView+Extension.swift in Sources */,
 				843856E7293B3EFA008371D2 /* ScenesContainer.swift in Sources */,
 				843856A2293B2FEA008371D2 /* AppDelegate.swift in Sources */,
+				84F1984E293B6675009BDC48 /* CoreDataStack.swift in Sources */,
 				843856F7293B427C008371D2 /* BaseView.swift in Sources */,
+				84F19855293B710A009BDC48 /* SkillCell.swift in Sources */,
+				84F19859293B7196009BDC48 /* UICollectionView+Extensions.swift in Sources */,
 				843856C4293B357A008371D2 /* Strings.swift in Sources */,
 				843856A4293B2FEA008371D2 /* SceneDelegate.swift in Sources */,
 				843856FA293B4298008371D2 /* BaseVC.swift in Sources */,

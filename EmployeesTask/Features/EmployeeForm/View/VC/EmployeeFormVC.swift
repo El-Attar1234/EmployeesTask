@@ -8,6 +8,7 @@
 import UIKit
 
 class EmployeeFormVC: BaseVC {
+    @IBOutlet private weak var skillsCollectionView: UICollectionView!
     
     weak var viewModel: EmployeeFormViewModelProtocol!
     init(viewModel: EmployeeFormViewModelProtocol) {
@@ -21,8 +22,21 @@ class EmployeeFormVC: BaseVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setupSkillsCollectionView()
+        
+        viewModel.viewDidLoad()
+    }
+    
+    func setupSkillsCollectionView() {
+        skillsCollectionView.dataSource = self
+        skillsCollectionView.delegate   = self
+        skillsCollectionView.register(cellType: SkillCell.self)
+    }
+    func setupBinding() {
+        viewModel.onSuccessFetching = {[weak self] in
+            guard let self else { return }
+            self.skillsCollectionView.reloadData()
+        }
     }
 
 }

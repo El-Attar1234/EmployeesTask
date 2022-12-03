@@ -40,9 +40,9 @@ class BaseVC: UIViewController {
             guard let self = self else { return }
             self.showIndicator()
         }
-        baseViewModel.showLoader = { [weak self]  in
+        baseViewModel.hideLoader = { [weak self]  in
             guard let self = self else { return }
-            self.showIndicator()
+            self.hideIndicator()
         }
         
         baseViewModel.showMessage = { [weak self] (message, type) in
