@@ -9,6 +9,7 @@ import UIKit
 import CoreData
 
 class SearchListVc: BaseVC {
+    @IBOutlet private weak var employeesTableView: UITableView!
     
     weak var viewModel: SearchListViewModelProtocol!
     init(viewModel: SearchListViewModelProtocol) {
@@ -22,12 +23,18 @@ class SearchListVc: BaseVC {
     lazy var coreDataStack = CoreDataStack(modelName: "EmployeesTask")
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupEmployeeTableView()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         fetchSavedEmployee()
     }
+    func setupEmployeeTableView() {
+        employeesTableView.dataSource = self
+        employeesTableView.delegate   = self
+        employeesTableView.register(cellType: EmployeeCell.self)
+    }
+    
     private func fetchSavedEmployee() {
         let fetchRequest: NSFetchRequest<Employee> = Employee.fetchRequest()
         do {

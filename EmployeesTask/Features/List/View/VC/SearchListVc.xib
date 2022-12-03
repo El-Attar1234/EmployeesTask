@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchListVc" customModule="EmployeesTask" customModuleProvider="target">
             <connections>
+                <outlet property="employeesTableView" destination="5fJ-nn-Qa4" id="Gx1-Dw-QSy"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -42,12 +43,24 @@
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fbV-aP-mpB" userLabel="Content View">
                             <rect key="frame" x="25" y="116" width="340" height="628"/>
+                            <subviews>
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="5fJ-nn-Qa4">
+                                    <rect key="frame" x="0.0" y="0.0" width="340" height="628"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                </tableView>
+                            </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="5fJ-nn-Qa4" firstAttribute="leading" secondItem="fbV-aP-mpB" secondAttribute="leading" id="AcJ-xJ-GHe"/>
+                                <constraint firstAttribute="trailing" secondItem="5fJ-nn-Qa4" secondAttribute="trailing" id="FLw-IY-rqU"/>
+                                <constraint firstItem="5fJ-nn-Qa4" firstAttribute="top" secondItem="fbV-aP-mpB" secondAttribute="top" id="M47-Bd-Cur"/>
+                                <constraint firstAttribute="bottom" secondItem="5fJ-nn-Qa4" secondAttribute="bottom" id="xs3-z7-a5P"/>
+                            </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ja3-cQ-mhg" userLabel="Add Employee View">
                             <rect key="frame" x="25" y="754" width="340" height="52"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9cD-bP-cLE" customClass="MainCustomButton" customModule="Genome" customModuleProvider="target">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9cD-bP-cLE" customClass="MainCustomButton" customModule="EmployeesTask" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="340" height="52"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="52" id="VO0-u3-7GD"/>
