@@ -89,5 +89,20 @@ class SearchListVc: BaseVC {
         let employeeformVC = SceneContainer.getEmployeeForm(formMode: mode)
         self.navigationController?.pushViewController(employeeformVC, animated: true)
     }
+    func showDeletelert(index: Int) {
+        
+        let alert = UIAlertController(title: "Deletion",
+                                      message: "Are you sure to delete Employee ?",
+                                      preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: {[weak self] _ in
+            guard let self = self else { return }
+            self.viewModel.delete(at: index)
+            self.employeesTableView.reloadData()
+        }))
+        alert.addAction(UIAlertAction(title: "No",
+                                      style: .cancel))
+        self.present(alert, animated: true, completion: nil)
+    }
     
 }

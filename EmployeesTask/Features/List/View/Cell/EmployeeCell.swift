@@ -11,6 +11,11 @@ class EmployeeCell: UITableViewCell {
     @IBOutlet private weak var profileImageView: UIImageView!
     @IBOutlet private weak var employeeName: UILabel!
     @IBOutlet private weak var employeeEmail: UILabel!
+    @IBOutlet private weak var skillsCollectionView: UICollectionView! {
+        didSet {
+            setupSkillsCollectionView()
+        }
+    }
     
     var deleteAction: (() -> Void)?
     var editAction: (() -> Void)?
@@ -19,6 +24,10 @@ class EmployeeCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+    }
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -34,8 +43,15 @@ class EmployeeCell: UITableViewCell {
         self.employeeEmail.text = employee.email
         if let photoData = employee.photoData {
             self.profileImageView.image = UIImage(data: photoData)
+        } else {
+            self.profileImageView.image = Asset.Images.profileAvatar.image
         }
-        print("skills ->>>>> \(employee.skills)")
+        skillsCollectionView.reloadData()
+    }
+    func setupSkillsCollectionView() {
+        skillsCollectionView.dataSource = self
+        skillsCollectionView.delegate   = self
+        skillsCollectionView.register(cellType: SkillCell.self)
     }
     
     @IBAction func editButtonTapped(_ sender: Any) {

@@ -96,13 +96,13 @@
                                     <action selector="deleteButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="P96-l7-Mu1"/>
                                 </connections>
                             </button>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="o1s-Cj-NGV">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="o1s-Cj-NGV">
                                 <rect key="frame" x="73" y="64" width="200" height="40"/>
-                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="ekI-nj-DaN"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="sqB-xL-ljq">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="sqB-xL-ljq">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -164,6 +164,7 @@
                 <outlet property="employeeEmail" destination="nPT-Il-uc9" id="ePr-yW-7P2"/>
                 <outlet property="employeeName" destination="MN8-jw-trz" id="xPA-Er-TO2"/>
                 <outlet property="profileImageView" destination="Yoc-6B-1ds" id="16c-v9-1LY"/>
+                <outlet property="skillsCollectionView" destination="o1s-Cj-NGV" id="Ncw-Xh-s4N"/>
             </connections>
             <point key="canvasLocation" x="-6.9230769230769225" y="-6.0426540284360186"/>
         </tableViewCell>

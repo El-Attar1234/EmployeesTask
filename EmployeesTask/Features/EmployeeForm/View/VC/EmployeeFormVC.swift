@@ -30,6 +30,10 @@ class EmployeeFormVC: BaseVC {
         setupBinding()
         viewModel.viewDidLoad()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = false
+    }
     
     func setupSkillsCollectionView() {
         skillsCollectionView.dataSource = self
@@ -69,7 +73,7 @@ class EmployeeFormVC: BaseVC {
         switch self.viewModel.getFormMode() {
         case .add:
             print("add")
-        case .edit(let employee):
+        case .edit(let employee, _):
             print("Data ->>>>> \(employee)")
             if let photoData = employee.photoData {
                 profileImage.image = UIImage(data: photoData)

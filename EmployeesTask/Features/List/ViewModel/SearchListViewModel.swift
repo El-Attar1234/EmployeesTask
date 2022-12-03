@@ -54,7 +54,7 @@ class SearchListViewModel: BaseViewModel, SearchListViewModelProtocol {
             filteredEmployees = employees
         } else {
             filteredEmployees = filteredEmployees.filter({ employee in
-                (employee.fullName ?? "" ).contains(text)
+                (employee.fullName ?? "" ).lowercased().contains(text.lowercased())
             })
         }
         didsearched?()

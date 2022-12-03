@@ -10,7 +10,7 @@ import CoreData
 
 enum FormMode {
     case add
-    case edit(Employee)
+    case edit(Employee, Int)
 }
 
 protocol EmployeeFormViewModelProtocol: AnyObject, BaseViewModelProtocol {
@@ -81,17 +81,42 @@ class EmployeeFormViewModel: BaseViewModel, EmployeeFormViewModelProtocol {
             employee.email = email
             employee.photoData = selectedImageData
             employee.skills = selectedSkills
-            print("Data ->>>>> \(employee)")
-        case .edit(let employee):
+            coreDataStack.saveContext()
+            updatedAddedSuccessfully?(formMode)
+        case .edit(let employee, let index):
             employee.fullName = fullName
             employee.email = email
             employee.photoData = selectedImageData
             employee.skills = selectedSkills
-            print("Data ->>>>> \(employee)")
+            coreDataStack.saveContext()
+            updatedAddedSuccessfully?(formMode)
+//            print("Data ->>>>> \(employee)")
+//            self.fetchSpecificEmployeeAndUpdate(index: index,
+//                                                fullName: fullName,
+//                                                email: email)
         }
-        coreDataStack.saveContext()
-        updatedAddedSuccessfully?(formMode)
-        
+    }
+    private func fetchSpecificEmployeeAndUpdate(index: Int, fullName: String, email: String) {
+        self.showLoader?()
+        let fetchRequest: NSFetchRequest<Employee> = Employee.fetchRequest()
+        do {
+            let savedCount = try coreDataStack.managedContext.count(for: fetchRequest)
+            if savedCount != 0 {
+                let savedResults = try coreDataStack.managedContext.fetch(fetchRequest)
+                let savedEmployee = savedResults[index]
+                savedEmployee.fullName = fullName
+                savedEmployee.email = email
+                savedEmployee.photoData = selectedImageData
+                savedEmployee.skills = selectedSkills
+                coreDataStack.saveContext()
+                self.hideLoader?()
+                updatedAddedSuccessfully?(formMode)
+            }
+            
+        } catch let error as NSError {
+            self.hideLoader?()
+            self.showMessage?("Error fetching: \(error), \(error.userInfo)", .error)
+        }
     }
     
 }
