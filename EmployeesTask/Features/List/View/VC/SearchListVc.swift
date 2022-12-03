@@ -11,6 +11,7 @@ import CoreData
 class SearchListVc: BaseVC {
     @IBOutlet private weak var emptyView: UIView!
     @IBOutlet private weak var employeesTableView: UITableView!
+    @IBOutlet private weak var searchBar: UITextField!
     
     weak var viewModel: SearchListViewModelProtocol!
     init(viewModel: SearchListViewModelProtocol) {
@@ -26,11 +27,13 @@ class SearchListVc: BaseVC {
         super.viewDidLoad()
         setupEmployeeTableView()
         setupInitialUI()
+        setUpSearchBar()
         setupBinding()
         
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = true
         viewModel.viewWillAppear()
     }
     func setupEmployeeTableView() {
@@ -43,6 +46,16 @@ class SearchListVc: BaseVC {
         employeesTableView.isHiddenIfNeeded = true
         emptyView.isHiddenIfNeeded = true
     }
+    private func setUpSearchBar() {
+        navigationItem.hidesSearchBarWhenScrolling = false
+        searchBar.addTarget(self, action: #selector(searchTextChanged(_:)), for: .editingChanged)
+        
+    }
+    @objc
+    func searchTextChanged(_ sender: UITextField) {
+        let search = sender.text ?? ""
+        viewModel.search(text: search)
+    }
     func setupBinding() {
         viewModel.onSuccessFetching = {[weak self] in
             guard let self else { return }
@@ -53,8 +66,17 @@ class SearchListVc: BaseVC {
                 self.employeesTableView.reloadData()
                 self.employeesTableView.isHiddenIfNeeded = false
                 self.emptyView.isHiddenIfNeeded = true
-                
-                
+            }
+        }
+        viewModel.didsearched = {[weak self] in
+            guard let self else { return }
+            if self.viewModel.getEmployees().isEmpty {
+                self.employeesTableView.isHiddenIfNeeded = true
+                self.emptyView.isHiddenIfNeeded = false
+            } else {
+                self.employeesTableView.reloadData()
+                self.employeesTableView.isHiddenIfNeeded = false
+                self.emptyView.isHiddenIfNeeded = true
             }
         }
     }

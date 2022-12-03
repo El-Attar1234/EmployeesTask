@@ -19,6 +19,7 @@
             <connections>
                 <outlet property="employeesTableView" destination="5fJ-nn-Qa4" id="Gx1-Dw-QSy"/>
                 <outlet property="emptyView" destination="gbr-9Q-T8y" id="BYO-Za-L8v"/>
+                <outlet property="searchBar" destination="Bu6-u7-tKV" id="JfG-fO-1gH"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -33,19 +34,29 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lea-7n-oeI" userLabel="search View">
                             <rect key="frame" x="25" y="50" width="340" height="56"/>
                             <subviews>
-                                <searchBar contentMode="redraw" placeholder="Search here for employees" translatesAutoresizingMaskIntoConstraints="NO" id="gPi-KU-1mw">
-                                    <rect key="frame" x="0.0" y="0.0" width="340" height="56"/>
-                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search here for employees" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bu6-u7-tKV">
+                                    <rect key="frame" x="10" y="5" width="320" height="46"/>
+                                    <color key="backgroundColor" name="gray-background"/>
+                                    <color key="textColor" name="item-black"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
-                                </searchBar>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="paddingLeftCustom">
+                                            <real key="value" value="15"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="viewCornerRadius">
+                                            <real key="value" value="10"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </textField>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
-                                <constraint firstAttribute="bottom" secondItem="gPi-KU-1mw" secondAttribute="bottom" id="GZr-Ss-obV"/>
-                                <constraint firstAttribute="trailing" secondItem="gPi-KU-1mw" secondAttribute="trailing" id="Kqe-fA-umE"/>
+                                <constraint firstItem="Bu6-u7-tKV" firstAttribute="leading" secondItem="Lea-7n-oeI" secondAttribute="leading" constant="10" id="6T3-BJ-z5Y"/>
                                 <constraint firstAttribute="height" constant="56" id="NTB-Ge-EM8"/>
-                                <constraint firstItem="gPi-KU-1mw" firstAttribute="top" secondItem="Lea-7n-oeI" secondAttribute="top" id="V6Q-ha-Y9x"/>
-                                <constraint firstItem="gPi-KU-1mw" firstAttribute="leading" secondItem="Lea-7n-oeI" secondAttribute="leading" id="cnO-x2-zm5"/>
+                                <constraint firstAttribute="bottom" secondItem="Bu6-u7-tKV" secondAttribute="bottom" constant="5" id="SLo-x7-R7x"/>
+                                <constraint firstItem="Bu6-u7-tKV" firstAttribute="top" secondItem="Lea-7n-oeI" secondAttribute="top" constant="5" id="XCc-T8-MrC"/>
+                                <constraint firstAttribute="trailing" secondItem="Bu6-u7-tKV" secondAttribute="trailing" constant="10" id="h52-kc-48h"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fbV-aP-mpB" userLabel="Content View">
@@ -148,6 +159,9 @@
     </designables>
     <resources>
         <image name="empty_data" width="66" height="87"/>
+        <namedColor name="gray-background">
+            <color red="0.97254901960784312" green="0.98039215686274506" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="item-black">
             <color red="0.17647058823529413" green="0.17647058823529413" blue="0.17647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -35,6 +35,7 @@ class EmployeeCell: UITableViewCell {
         if let photoData = employee.photoData {
             self.profileImageView.image = UIImage(data: photoData)
         }
+        print("skills ->>>>> \(employee.skills)")
     }
     
     @IBAction func editButtonTapped(_ sender: Any) {

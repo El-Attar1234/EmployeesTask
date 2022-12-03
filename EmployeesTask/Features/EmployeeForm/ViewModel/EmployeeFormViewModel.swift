@@ -25,12 +25,13 @@ protocol EmployeeFormViewModelProtocol: AnyObject, BaseViewModelProtocol {
     func getSkills() -> [String]
     func isSelected(skill: String) -> Bool
     func addOrDelete(skill: String)
+    func setSelected(skills: [String])
     func saveEmployee(fullName: String, email: String)
     var selectedImageData: Data? { get set }
 }
 
 class EmployeeFormViewModel: BaseViewModel, EmployeeFormViewModelProtocol {
-   
+    
     // MARK: - Observables
     var onSuccessFetching: (() -> Void)?
     var updatedAddedSuccessfully: ((FormMode) -> Void)?
@@ -39,7 +40,7 @@ class EmployeeFormViewModel: BaseViewModel, EmployeeFormViewModelProtocol {
     let formMode: FormMode
     lazy var coreDataStack = CoreDataStack(modelName: "EmployeesTask")
     var allSavedSkills: [String] = []
-    var selectedSkills: [String] = ["iOS"]
+    var selectedSkills: [String] = []
     var selectedImageData: Data?
     
     init(formMode: FormMode) {
@@ -57,6 +58,9 @@ class EmployeeFormViewModel: BaseViewModel, EmployeeFormViewModelProtocol {
         allSavedSkills
     }
     
+    func setSelected(skills: [String]) {
+        selectedSkills = skills
+    }
     func isSelected(skill: String) -> Bool {
         selectedSkills.contains(skill)
     }
@@ -76,15 +80,18 @@ class EmployeeFormViewModel: BaseViewModel, EmployeeFormViewModelProtocol {
             employee.fullName = fullName
             employee.email = email
             employee.photoData = selectedImageData
-           
+            employee.skills = selectedSkills
+            print("Data ->>>>> \(employee)")
         case .edit(let employee):
             employee.fullName = fullName
             employee.email = email
             employee.photoData = selectedImageData
+            employee.skills = selectedSkills
+            print("Data ->>>>> \(employee)")
         }
         coreDataStack.saveContext()
         updatedAddedSuccessfully?(formMode)
-       
+        
     }
     
 }
@@ -129,7 +136,6 @@ extension EmployeeFormViewModel {
     
     private func fetchedSuccessfully() {
         self.hideLoader?()
-        self.showMessage?("Skills Fetched Successfully", .success)
         self.onSuccessFetching?()
     }
 }
