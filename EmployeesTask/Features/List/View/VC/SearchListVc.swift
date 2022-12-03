@@ -9,7 +9,6 @@ import UIKit
 
 class SearchListVc: BaseVC {
     
-    
     weak var viewModel: SearchListViewModelProtocol!
     init(viewModel: SearchListViewModelProtocol) {
         super.init(baseViewModel: viewModel)
@@ -24,5 +23,9 @@ class SearchListVc: BaseVC {
         super.viewDidLoad()
 
     }
-
+    
+    @IBAction func addEmployeeButtonTapped(_ sender: Any) {
+        let employeeformVC = SceneContainer.getEmployeeForm()
+        self.navigationController?.pushViewController(employeeformVC, animated: true)
+    }
 }

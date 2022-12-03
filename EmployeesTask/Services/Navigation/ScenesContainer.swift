@@ -16,10 +16,15 @@ final class SceneContainer {
         return nav
     }
     
-        class func getSearchListVc() -> SearchListVc {
-            let viewModel = SearchListViewModel()
-            let vc = SearchListVc(viewModel: viewModel)
-            return vc
-        }
+    class func getSearchListVc() -> SearchListVc {
+        let viewModel = SearchListViewModel()
+        let vc = SearchListVc(viewModel: viewModel)
+        return vc
+    }
     
+    class func getEmployeeForm() -> EmployeeFormVC {
+        let viewModel = EmployeeFormViewModel()
+        let vc = EmployeeFormVC(viewModel: viewModel)
+        return vc
+    }
 }
