@@ -18,7 +18,7 @@ class MainCustomButton: UIButton {
     
     private func buttonSetting() {
         backgroundColor = Asset.Colors.mainBlue.color
-        titleLabel?.font = .cairoBoldFont(with: 13)
+        titleLabel?.font = .cairoBoldFont(with: 16)
         setTitleColor(.white, for: .normal)
         layer.cornerRadius = 12
     }

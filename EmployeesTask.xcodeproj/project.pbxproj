@@ -34,6 +34,8 @@
 		8438571A293B4E2D008371D2 /* EmployeeFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84385719293B4E2D008371D2 /* EmployeeFormViewModel.swift */; };
 		8438571E293B4E69008371D2 /* EmployeeFormVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8438571C293B4E69008371D2 /* EmployeeFormVC.swift */; };
 		8438571F293B4E69008371D2 /* EmployeeFormVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8438571D293B4E69008371D2 /* EmployeeFormVC.xib */; };
+		84385722293B542C008371D2 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84385721293B542C008371D2 /* UITextField+Extension.swift */; };
+		84385725293B5456008371D2 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84385724293B5456008371D2 /* UIView+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +66,8 @@
 		84385719293B4E2D008371D2 /* EmployeeFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeFormViewModel.swift; sourceTree = "<group>"; };
 		8438571C293B4E69008371D2 /* EmployeeFormVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeFormVC.swift; sourceTree = "<group>"; };
 		8438571D293B4E69008371D2 /* EmployeeFormVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmployeeFormVC.xib; sourceTree = "<group>"; };
+		84385721293B542C008371D2 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
+		84385724293B5456008371D2 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -263,6 +267,8 @@
 		8438570A293B4A70008371D2 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				84385723293B5444008371D2 /* UIView */,
+				84385720293B5414008371D2 /* UITextField */,
 				84385712293B4B8C008371D2 /* UIFont */,
 			);
 			path = Extensions;
@@ -318,6 +324,22 @@
 				8438571D293B4E69008371D2 /* EmployeeFormVC.xib */,
 			);
 			path = VC;
+			sourceTree = "<group>";
+		};
+		84385720293B5414008371D2 /* UITextField */ = {
+			isa = PBXGroup;
+			children = (
+				84385721293B542C008371D2 /* UITextField+Extension.swift */,
+			);
+			path = UITextField;
+			sourceTree = "<group>";
+		};
+		84385723293B5444008371D2 /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				84385724293B5456008371D2 /* UIView+Extension.swift */,
+			);
+			path = UIView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -456,8 +478,10 @@
 				84385709293B49A6008371D2 /* MainCustomButton.swift in Sources */,
 				8438571A293B4E2D008371D2 /* EmployeeFormViewModel.swift in Sources */,
 				843856EE293B3F6B008371D2 /* SearchListVc.swift in Sources */,
+				84385722293B542C008371D2 /* UITextField+Extension.swift in Sources */,
 				843856BF293B3391008371D2 /* XCAssets+Generated.swift in Sources */,
 				843856AC293B2FEA008371D2 /* EmployeesTask.xcdatamodeld in Sources */,
+				84385725293B5456008371D2 /* UIView+Extension.swift in Sources */,
 				843856E7293B3EFA008371D2 /* ScenesContainer.swift in Sources */,
 				843856A2293B2FEA008371D2 /* AppDelegate.swift in Sources */,
 				843856F7293B427C008371D2 /* BaseView.swift in Sources */,

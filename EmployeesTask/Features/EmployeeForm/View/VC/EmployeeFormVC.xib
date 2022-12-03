@@ -1,22 +1,286 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Cairo-SemiBold.ttf">
+            <string>Cairo-SemiBold</string>
+        </array>
+    </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EmployeeFormVC" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EmployeeFormVC" customModule="EmployeesTask" customModuleProvider="target">
             <connections>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bRh-xr-vWS">
+                    <rect key="frame" x="0.0" y="47" width="390" height="763"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0xS-YR-u11" userLabel="Content View">
+                            <rect key="frame" x="0.0" y="0.0" width="390" height="763"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cwW-bE-j5e" customClass="RectangularDashedView" customModule="EmployeesTask" customModuleProvider="target">
+                                    <rect key="frame" x="149" y="30" width="92" height="92"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_avatar" translatesAutoresizingMaskIntoConstraints="NO" id="riS-1m-i5E">
+                                            <rect key="frame" x="6" y="6" width="80" height="80"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="viewCornerRadius">
+                                                    <real key="value" value="40"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="92" id="HFX-Hb-7H6"/>
+                                        <constraint firstItem="riS-1m-i5E" firstAttribute="top" secondItem="cwW-bE-j5e" secondAttribute="top" constant="6" id="Lhe-9m-pq1"/>
+                                        <constraint firstAttribute="bottom" secondItem="riS-1m-i5E" secondAttribute="bottom" constant="6" id="Ndb-C5-5gL"/>
+                                        <constraint firstAttribute="trailing" secondItem="riS-1m-i5E" secondAttribute="trailing" constant="6" id="kWJ-O8-Mxc"/>
+                                        <constraint firstAttribute="height" constant="92" id="rok-pA-ENt"/>
+                                        <constraint firstItem="riS-1m-i5E" firstAttribute="leading" secondItem="cwW-bE-j5e" secondAttribute="leading" constant="6" id="yyC-Zx-yLN"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="dashColor">
+                                            <color key="value" name="main-purple"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="46"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="dashWidth">
+                                            <real key="value" value="2"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="dashLength">
+                                            <real key="value" value="6"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="betweenDashesSpace">
+                                            <real key="value" value="2"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="edit_profile" translatesAutoresizingMaskIntoConstraints="NO" id="Y6s-Ww-CwR">
+                                    <rect key="frame" x="139" y="20" width="34" height="34"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="34" id="RuD-66-fMM"/>
+                                        <constraint firstAttribute="width" constant="34" id="lfr-aG-KSl"/>
+                                    </constraints>
+                                </imageView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OKc-qc-JKJ">
+                                    <rect key="frame" x="139" y="20" width="34" height="34"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="34" id="M9b-Xe-qIM"/>
+                                        <constraint firstAttribute="width" constant="34" id="lil-tj-6Sa"/>
+                                    </constraints>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                </button>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="SYm-zM-bmR">
+                                    <rect key="frame" x="20" y="147" width="350" height="275"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="2FY-0X-amE" userLabel="FullName View">
+                                            <rect key="frame" x="0.0" y="0.0" width="350" height="83.666666666666671"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="rq8-GA-4K4">
+                                                    <rect key="frame" x="0.0" y="0.0" width="350" height="24.666666666666668"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G8C-RU-bo2">
+                                                            <rect key="frame" x="0.0" y="0.0" width="60" height="24.666666666666668"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="60" id="eQ9-kB-F7j"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo" pointSize="13"/>
+                                                            <color key="textColor" name="item-black"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RLF-Zl-5cG">
+                                                            <rect key="frame" x="62" y="0.0" width="288" height="24.666666666666668"/>
+                                                            <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo" pointSize="13"/>
+                                                            <color key="textColor" systemColor="systemRedColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Please, Enter your fullName" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BT5-tn-U8c">
+                                                    <rect key="frame" x="0.0" y="26.666666666666657" width="350" height="55"/>
+                                                    <color key="backgroundColor" name="gray-background"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="55" id="oCm-rO-jD5"/>
+                                                    </constraints>
+                                                    <color key="textColor" name="item-black"/>
+                                                    <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="phonePad" returnKeyType="next" textContentType="tel"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="viewCornerRadius">
+                                                            <real key="value" value="12"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="paddingLeftCustom">
+                                                            <real key="value" value="15"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="validatorString" value="saudiNumber"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </textField>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RYJ-c6-sWP">
+                                                    <rect key="frame" x="0.0" y="83.666666666666686" width="350" height="0.0"/>
+                                                    <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo" pointSize="11"/>
+                                                    <color key="textColor" systemColor="systemRedColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="3LO-NP-QAn" userLabel="Email Stack View">
+                                            <rect key="frame" x="0.0" y="95.666666666666686" width="350" height="83.666666666666686"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-mail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N5J-99-6Xc">
+                                                    <rect key="frame" x="0.0" y="0.0" width="350" height="24.666666666666668"/>
+                                                    <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo" pointSize="13"/>
+                                                    <color key="textColor" name="item-black"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Please, Enter your E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eYZ-hx-apV" customClass="CustomReusableTextField" customModule="EmployeesTask" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="26.666666666666629" width="350" height="55"/>
+                                                    <color key="backgroundColor" name="gray-background"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="55" id="j7I-zF-QR0"/>
+                                                    </constraints>
+                                                    <color key="textColor" name="item-black"/>
+                                                    <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="viewCornerRadius">
+                                                            <real key="value" value="12"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="paddingLeftCustom">
+                                                            <real key="value" value="15"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="validatorString" value="email"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </textField>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fbA-V8-WJp">
+                                                    <rect key="frame" x="0.0" y="83.666666666666629" width="350" height="0.0"/>
+                                                    <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo" pointSize="11"/>
+                                                    <color key="textColor" systemColor="systemRedColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="X90-sP-zJv" userLabel="Skills Stack View">
+                                            <rect key="frame" x="0.0" y="191.33333333333331" width="350" height="83.666666666666686"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Skills" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gi9-S6-MDt">
+                                                    <rect key="frame" x="0.0" y="0.0" width="350" height="24.666666666666668"/>
+                                                    <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo" pointSize="13"/>
+                                                    <color key="textColor" name="item-black"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Skills" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hQa-hD-ZeW">
+                                                    <rect key="frame" x="0.0" y="26.666666666666686" width="350" height="55"/>
+                                                    <color key="backgroundColor" name="gray-background"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="55" id="YHD-jI-07a"/>
+                                                    </constraints>
+                                                    <color key="textColor" name="item-black"/>
+                                                    <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="viewCornerRadius">
+                                                            <real key="value" value="12"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="paddingLeftCustom">
+                                                            <real key="value" value="15"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </textField>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u9g-u8-qKZ">
+                                                    <rect key="frame" x="0.0" y="83.666666666666686" width="350" height="0.0"/>
+                                                    <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo" pointSize="11"/>
+                                                    <color key="textColor" systemColor="systemRedColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </stackView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k3l-U9-oMt" customClass="MainCustomButton" customModule="EmployeesTask" customModuleProvider="target">
+                                    <rect key="frame" x="20" y="696" width="350" height="52"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="52" id="Kd0-L8-W7V"/>
+                                    </constraints>
+                                    <state key="normal" title="Save"/>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="cwW-bE-j5e" firstAttribute="centerX" secondItem="0xS-YR-u11" secondAttribute="centerX" id="05V-gE-CQ9"/>
+                                <constraint firstItem="Y6s-Ww-CwR" firstAttribute="top" secondItem="cwW-bE-j5e" secondAttribute="top" constant="-10" id="EwZ-le-cLF"/>
+                                <constraint firstItem="SYm-zM-bmR" firstAttribute="leading" secondItem="0xS-YR-u11" secondAttribute="leading" constant="20" id="HYF-gh-9dt"/>
+                                <constraint firstItem="k3l-U9-oMt" firstAttribute="top" relation="greaterThanOrEqual" secondItem="SYm-zM-bmR" secondAttribute="bottom" constant="25" id="HpB-45-c1n"/>
+                                <constraint firstItem="Y6s-Ww-CwR" firstAttribute="leading" secondItem="cwW-bE-j5e" secondAttribute="leading" constant="-10" id="IzY-4y-eYM"/>
+                                <constraint firstItem="OKc-qc-JKJ" firstAttribute="centerX" secondItem="Y6s-Ww-CwR" secondAttribute="centerX" id="Mh2-Bx-snK"/>
+                                <constraint firstItem="cwW-bE-j5e" firstAttribute="top" secondItem="0xS-YR-u11" secondAttribute="top" constant="30" id="VIR-dJ-RRq"/>
+                                <constraint firstItem="SYm-zM-bmR" firstAttribute="top" secondItem="cwW-bE-j5e" secondAttribute="bottom" constant="25" id="gBM-NN-NGg"/>
+                                <constraint firstItem="k3l-U9-oMt" firstAttribute="leading" secondItem="0xS-YR-u11" secondAttribute="leading" constant="20" id="hhu-W4-c9O"/>
+                                <constraint firstItem="OKc-qc-JKJ" firstAttribute="centerY" secondItem="Y6s-Ww-CwR" secondAttribute="centerY" id="lFn-yS-wdj"/>
+                                <constraint firstAttribute="trailing" secondItem="k3l-U9-oMt" secondAttribute="trailing" constant="20" id="qUj-1p-so2"/>
+                                <constraint firstAttribute="trailing" secondItem="SYm-zM-bmR" secondAttribute="trailing" constant="20" id="rCh-Wc-xaE"/>
+                                <constraint firstAttribute="bottom" secondItem="k3l-U9-oMt" secondAttribute="bottom" constant="15" id="yJR-R2-0IX"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="0xS-YR-u11" secondAttribute="bottom" id="1mL-5Y-9NB"/>
+                        <constraint firstAttribute="trailing" secondItem="0xS-YR-u11" secondAttribute="trailing" id="BG8-oj-4ur"/>
+                        <constraint firstItem="0xS-YR-u11" firstAttribute="width" secondItem="bRh-xr-vWS" secondAttribute="width" id="OlX-4g-sdo"/>
+                        <constraint firstItem="0xS-YR-u11" firstAttribute="height" secondItem="bRh-xr-vWS" secondAttribute="height" priority="250" id="Uil-sY-3E7"/>
+                        <constraint firstItem="0xS-YR-u11" firstAttribute="top" secondItem="bRh-xr-vWS" secondAttribute="top" id="uux-dL-fp3"/>
+                        <constraint firstItem="0xS-YR-u11" firstAttribute="leading" secondItem="bRh-xr-vWS" secondAttribute="leading" id="zij-mS-EtX"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="bRh-xr-vWS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="2MS-Nn-dfe"/>
+                <constraint firstItem="bRh-xr-vWS" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="SP2-od-lSZ"/>
+                <constraint firstAttribute="trailing" secondItem="bRh-xr-vWS" secondAttribute="trailing" id="mBR-gw-d5e"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="bRh-xr-vWS" secondAttribute="bottom" id="ui7-Qa-hR0"/>
+            </constraints>
+            <point key="canvasLocation" x="15" y="21"/>
         </view>
     </objects>
+    <designables>
+        <designable name="k3l-U9-oMt">
+            <size key="intrinsicContentSize" width="34" height="30"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="edit_profile" width="32" height="31.666666030883789"/>
+        <image name="profile_avatar" width="150" height="150"/>
+        <namedColor name="gray-background">
+            <color red="0.97254901960784312" green="0.98039215686274506" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="item-black">
+            <color red="0.17647058823529413" green="0.17647058823529413" blue="0.17647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="main-purple">
+            <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
