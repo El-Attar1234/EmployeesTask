@@ -18,3 +18,10 @@
    outputs:
      - templateName: swift5
        output: Assets/XCAssets+Generated.swift
+# Fonts
+ fonts:
+   inputs: Fonts/
+
+   outputs:
+     - templateName: swift5
+       output: Fonts/Fonts.swift

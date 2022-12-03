@@ -26,6 +26,11 @@
 		843856FF293B42FB008371D2 /* MBProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 843856FE293B42FB008371D2 /* MBProgressHUD */; };
 		84385702293B4326008371D2 /* SwiftMessages in Frameworks */ = {isa = PBXBuildFile; productRef = 84385701293B4326008371D2 /* SwiftMessages */; };
 		84385706293B44E6008371D2 /* SearchListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84385705293B44E6008371D2 /* SearchListViewModel.swift */; };
+		84385709293B49A6008371D2 /* MainCustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84385708293B49A6008371D2 /* MainCustomButton.swift */; };
+		8438570E293B4ADA008371D2 /* Cairo-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8438570C293B4ADA008371D2 /* Cairo-Bold.ttf */; };
+		8438570F293B4ADA008371D2 /* Cairo-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8438570D293B4ADA008371D2 /* Cairo-SemiBold.ttf */; };
+		84385711293B4B50008371D2 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84385710293B4B50008371D2 /* Fonts.swift */; };
+		84385714293B4BA0008371D2 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84385713293B4BA0008371D2 /* UIFont+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +53,11 @@
 		843856F9293B4298008371D2 /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
 		843856FB293B42A8008371D2 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		84385705293B44E6008371D2 /* SearchListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListViewModel.swift; sourceTree = "<group>"; };
+		84385708293B49A6008371D2 /* MainCustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCustomButton.swift; sourceTree = "<group>"; };
+		8438570C293B4ADA008371D2 /* Cairo-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-Bold.ttf"; sourceTree = "<group>"; };
+		8438570D293B4ADA008371D2 /* Cairo-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-SemiBold.ttf"; sourceTree = "<group>"; };
+		84385710293B4B50008371D2 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		84385713293B4BA0008371D2 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +108,7 @@
 				843856F1293B4185008371D2 /* Configurations */,
 				843856C0293B33DD008371D2 /* Localization */,
 				843856BA293B321C008371D2 /* Assets */,
+				8438570B293B4AC8008371D2 /* Fonts */,
 				843856AF293B2FEB008371D2 /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
@@ -126,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				843856E3293B3ED0008371D2 /* Navigation */,
+				8438570A293B4A70008371D2 /* Extensions */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -142,6 +154,7 @@
 		843856E8293B3F16008371D2 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				84385707293B4983008371D2 /* ReusableCustomView */,
 				843856E9293B3F4D008371D2 /* List */,
 			);
 			path = Features;
@@ -232,6 +245,40 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		84385707293B4983008371D2 /* ReusableCustomView */ = {
+			isa = PBXGroup;
+			children = (
+				84385708293B49A6008371D2 /* MainCustomButton.swift */,
+			);
+			path = ReusableCustomView;
+			sourceTree = "<group>";
+		};
+		8438570A293B4A70008371D2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				84385712293B4B8C008371D2 /* UIFont */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8438570B293B4AC8008371D2 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				84385710293B4B50008371D2 /* Fonts.swift */,
+				8438570C293B4ADA008371D2 /* Cairo-Bold.ttf */,
+				8438570D293B4ADA008371D2 /* Cairo-SemiBold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		84385712293B4B8C008371D2 /* UIFont */ = {
+			isa = PBXGroup;
+			children = (
+				84385713293B4BA0008371D2 /* UIFont+Extension.swift */,
+			);
+			path = UIFont;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -304,7 +351,9 @@
 				843856B1293B2FEB008371D2 /* LaunchScreen.storyboard in Resources */,
 				843856BD293B3345008371D2 /* Colors.xcassets in Resources */,
 				843856AE293B2FEB008371D2 /* Images.xcassets in Resources */,
+				8438570E293B4ADA008371D2 /* Cairo-Bold.ttf in Resources */,
 				843856EF293B3F6B008371D2 /* SearchListVc.xib in Resources */,
+				8438570F293B4ADA008371D2 /* Cairo-SemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,9 +405,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84385711293B4B50008371D2 /* Fonts.swift in Sources */,
 				843856E5293B3EED008371D2 /* AppManager.swift in Sources */,
 				843856FC293B42A8008371D2 /* BaseViewModel.swift in Sources */,
+				84385714293B4BA0008371D2 /* UIFont+Extension.swift in Sources */,
 				84385706293B44E6008371D2 /* SearchListViewModel.swift in Sources */,
+				84385709293B49A6008371D2 /* MainCustomButton.swift in Sources */,
 				843856EE293B3F6B008371D2 /* SearchListVc.swift in Sources */,
 				843856BF293B3391008371D2 /* XCAssets+Generated.swift in Sources */,
 				843856AC293B2FEA008371D2 /* EmployeesTask.xcdatamodeld in Sources */,
