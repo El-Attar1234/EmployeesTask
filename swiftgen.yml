@@ -1,5 +1,14 @@
+ # common path for inputs and outputs of resources
  input_dir: EmployeesTask/Resources/
  output_dir: EmployeesTask/Resources/
+ 
+ # Localization
+ strings:
+   inputs:
+     - Localization/Base.lproj
+   outputs:
+     - templateName: structured-swift5
+       output: Localization/Strings.swift
 
 # Assets(Images and colors)
  xcassets:
