@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import CoreData
 
 class SearchListVc: BaseVC {
     @IBOutlet private weak var emptyView: UIView!
