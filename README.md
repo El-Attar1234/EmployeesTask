@@ -1,12 +1,18 @@
 # EmployeesTask
-# iOS Employee app using Clean Architecture  MVVM with Closures.
+# iOS Employee app using Clean Architecture  MVVM with Closures
+
 # Include
 
 - [CoreData](https://developer.apple.com/documentation/coredata)
 - [SwiftLint](https://github.com/realm/SwiftLint)
+- [SwiftGen](https://github.com/SwiftGen/SwiftGen)
+** Usin SPM **
 - [MBProgressHUD](https://github.com/jdg/MBProgressHUD)
 - [SwiftMessages](https://github.com/SwiftKickMobile/SwiftMessages)
 - [IQKeyboardManager](https://github.com/hackiftekhar/IQKeyboardManager)
+- Xib(Not StoryBoard)
+- AppManager and SceneContainer with DI to handlenavigation
+- BaseView and BaseViewModel for reusability and dcalability 
 
 # Demo
 - [Demo](https://drive.google.com/drive/folders/1zIDUt_UWXQuuQ8s_78GGxpNyqEtsiAF7)
