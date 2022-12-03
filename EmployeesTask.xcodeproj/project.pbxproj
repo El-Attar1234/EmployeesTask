@@ -36,6 +36,8 @@
 		8438571F293B4E69008371D2 /* EmployeeFormVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8438571D293B4E69008371D2 /* EmployeeFormVC.xib */; };
 		84385722293B542C008371D2 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84385721293B542C008371D2 /* UITextField+Extension.swift */; };
 		84385725293B5456008371D2 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84385724293B5456008371D2 /* UIView+Extension.swift */; };
+		84F1984A293B64F5009BDC48 /* SkillModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F19848293B64F5009BDC48 /* SkillModel+CoreDataClass.swift */; };
+		84F1984B293B64F5009BDC48 /* SkillModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F19849293B64F5009BDC48 /* SkillModel+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +70,8 @@
 		8438571D293B4E69008371D2 /* EmployeeFormVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmployeeFormVC.xib; sourceTree = "<group>"; };
 		84385721293B542C008371D2 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		84385724293B5456008371D2 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		84F19848293B64F5009BDC48 /* SkillModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SkillModel+CoreDataClass.swift"; sourceTree = "<group>"; };
+		84F19849293B64F5009BDC48 /* SkillModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SkillModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,6 +247,7 @@
 		84385703293B4497008371D2 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				84F19846293B64DA009BDC48 /* Model */,
 				843856AA293B2FEA008371D2 /* EmployeesTask.xcdatamodeld */,
 			);
 			path = Data;
@@ -340,6 +345,23 @@
 				84385724293B5456008371D2 /* UIView+Extension.swift */,
 			);
 			path = UIView;
+			sourceTree = "<group>";
+		};
+		84F19846293B64DA009BDC48 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				84F19847293B64E0009BDC48 /* Skills */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		84F19847293B64E0009BDC48 /* Skills */ = {
+			isa = PBXGroup;
+			children = (
+				84F19848293B64F5009BDC48 /* SkillModel+CoreDataClass.swift */,
+				84F19849293B64F5009BDC48 /* SkillModel+CoreDataProperties.swift */,
+			);
+			path = Skills;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -469,11 +491,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84F1984B293B64F5009BDC48 /* SkillModel+CoreDataProperties.swift in Sources */,
 				84385711293B4B50008371D2 /* Fonts.swift in Sources */,
 				843856E5293B3EED008371D2 /* AppManager.swift in Sources */,
 				843856FC293B42A8008371D2 /* BaseViewModel.swift in Sources */,
 				84385714293B4BA0008371D2 /* UIFont+Extension.swift in Sources */,
 				84385706293B44E6008371D2 /* SearchListViewModel.swift in Sources */,
+				84F1984A293B64F5009BDC48 /* SkillModel+CoreDataClass.swift in Sources */,
 				8438571E293B4E69008371D2 /* EmployeeFormVC.swift in Sources */,
 				84385709293B49A6008371D2 /* MainCustomButton.swift in Sources */,
 				8438571A293B4E2D008371D2 /* EmployeeFormViewModel.swift in Sources */,
