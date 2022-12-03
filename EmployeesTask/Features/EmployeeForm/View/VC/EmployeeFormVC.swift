@@ -1,5 +1,5 @@
 //
-//  SearchListVc.swift
+//  EmployeeFormVC.swift
 //  EmployeesTask
 //
 //  Created by Ibtikar on 03/12/2022.
@@ -7,11 +7,10 @@
 
 import UIKit
 
-class SearchListVc: BaseVC {
+class EmployeeFormVC: BaseVC {
     
-    
-    weak var viewModel: SearchListViewModelProtocol!
-    init(viewModel: SearchListViewModelProtocol) {
+    weak var viewModel: EmployeeFormViewModelProtocol!
+    init(viewModel: EmployeeFormViewModelProtocol) {
         super.init(baseViewModel: viewModel)
         self.viewModel = viewModel
     }
@@ -23,6 +22,7 @@ class SearchListVc: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // Do any additional setup after loading the view.
     }
 
 }

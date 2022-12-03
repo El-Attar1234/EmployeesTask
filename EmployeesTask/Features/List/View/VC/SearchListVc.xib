@@ -23,10 +23,10 @@
                     <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lea-7n-oeI" userLabel="search View">
-                            <rect key="frame" x="20" y="50" width="350" height="56"/>
+                            <rect key="frame" x="25" y="50" width="340" height="56"/>
                             <subviews>
                                 <searchBar contentMode="redraw" placeholder="Search here for employees" translatesAutoresizingMaskIntoConstraints="NO" id="gPi-KU-1mw">
-                                    <rect key="frame" x="0.0" y="0.0" width="350" height="56"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="340" height="56"/>
                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </searchBar>
@@ -40,11 +40,15 @@
                                 <constraint firstItem="gPi-KU-1mw" firstAttribute="leading" secondItem="Lea-7n-oeI" secondAttribute="leading" id="cnO-x2-zm5"/>
                             </constraints>
                         </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fbV-aP-mpB" userLabel="Content View">
+                            <rect key="frame" x="25" y="116" width="340" height="628"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ja3-cQ-mhg" userLabel="Add Employee View">
-                            <rect key="frame" x="35" y="754" width="320" height="52"/>
+                            <rect key="frame" x="25" y="754" width="340" height="52"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9cD-bP-cLE" customClass="MainCustomButton" customModule="Genome" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="52"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="340" height="52"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="52" id="VO0-u3-7GD"/>
                                     </constraints>
@@ -54,20 +58,24 @@
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
-                                <constraint firstAttribute="trailing" secondItem="9cD-bP-cLE" secondAttribute="trailing" id="J6T-u6-ihe"/>
                                 <constraint firstAttribute="bottom" secondItem="9cD-bP-cLE" secondAttribute="bottom" id="RSa-s0-yby"/>
-                                <constraint firstItem="9cD-bP-cLE" firstAttribute="leading" secondItem="Ja3-cQ-mhg" secondAttribute="leading" id="bVt-aj-u6s"/>
+                                <constraint firstItem="9cD-bP-cLE" firstAttribute="leading" secondItem="Ja3-cQ-mhg" secondAttribute="leading" id="csB-WH-GE8"/>
                                 <constraint firstItem="9cD-bP-cLE" firstAttribute="top" secondItem="Ja3-cQ-mhg" secondAttribute="top" id="dFr-PM-Hwn"/>
+                                <constraint firstAttribute="trailing" secondItem="9cD-bP-cLE" secondAttribute="trailing" id="zCq-nv-8WF"/>
                             </constraints>
                         </view>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstItem="Lea-7n-oeI" firstAttribute="top" secondItem="7bx-6S-MNl" secondAttribute="top" constant="50" id="1yb-PS-pvb"/>
-                        <constraint firstItem="Lea-7n-oeI" firstAttribute="leading" secondItem="7bx-6S-MNl" secondAttribute="leading" constant="20" id="5sO-6X-7KU"/>
-                        <constraint firstAttribute="trailing" secondItem="Ja3-cQ-mhg" secondAttribute="trailing" constant="35" id="JuL-qJ-Jpy"/>
-                        <constraint firstItem="Ja3-cQ-mhg" firstAttribute="leading" secondItem="7bx-6S-MNl" secondAttribute="leading" constant="35" id="eoM-pT-e0N"/>
-                        <constraint firstAttribute="trailing" secondItem="Lea-7n-oeI" secondAttribute="trailing" constant="20" id="m6F-9s-usl"/>
+                        <constraint firstItem="Lea-7n-oeI" firstAttribute="leading" secondItem="7bx-6S-MNl" secondAttribute="leading" constant="25" id="5sO-6X-7KU"/>
+                        <constraint firstItem="fbV-aP-mpB" firstAttribute="trailing" secondItem="Lea-7n-oeI" secondAttribute="trailing" id="CK4-Iw-DfI"/>
+                        <constraint firstItem="fbV-aP-mpB" firstAttribute="top" secondItem="Lea-7n-oeI" secondAttribute="bottom" constant="10" id="D2d-6h-pnB"/>
+                        <constraint firstItem="Ja3-cQ-mhg" firstAttribute="leading" secondItem="Lea-7n-oeI" secondAttribute="leading" id="I8c-tU-baJ"/>
+                        <constraint firstItem="Ja3-cQ-mhg" firstAttribute="top" secondItem="fbV-aP-mpB" secondAttribute="bottom" constant="10" id="N7V-o3-L0m"/>
+                        <constraint firstItem="Ja3-cQ-mhg" firstAttribute="trailing" secondItem="Lea-7n-oeI" secondAttribute="trailing" id="WiW-uQ-95S"/>
+                        <constraint firstItem="fbV-aP-mpB" firstAttribute="leading" secondItem="Lea-7n-oeI" secondAttribute="leading" id="ggg-b5-7zQ"/>
+                        <constraint firstAttribute="trailing" secondItem="Lea-7n-oeI" secondAttribute="trailing" constant="25" id="m6F-9s-usl"/>
                         <constraint firstAttribute="bottom" secondItem="Ja3-cQ-mhg" secondAttribute="bottom" constant="38" id="v8x-So-fwU"/>
                     </constraints>
                 </view>
