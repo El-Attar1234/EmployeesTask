@@ -9,6 +9,17 @@ import UIKit
 
 extension UIView {
     
+    var isHiddenIfNeeded: Bool {
+        get {
+            return self.isHidden
+        }
+        set {
+            if self.isHidden != newValue {
+                self.isHidden = newValue
+            }
+        }
+    }
+    
     @IBInspectable var viewCornerRadius: CGFloat {
         get {
             return layer.cornerRadius

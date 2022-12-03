@@ -9,6 +9,7 @@ import UIKit
 import CoreData
 
 class SearchListVc: BaseVC {
+    @IBOutlet private weak var emptyView: UIView!
     @IBOutlet private weak var employeesTableView: UITableView!
     
     weak var viewModel: SearchListViewModelProtocol!
@@ -20,14 +21,17 @@ class SearchListVc: BaseVC {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    lazy var coreDataStack = CoreDataStack(modelName: "EmployeesTask")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupEmployeeTableView()
+        setupInitialUI()
+        setupBinding()
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        fetchSavedEmployee()
+        viewModel.viewWillAppear()
     }
     func setupEmployeeTableView() {
         employeesTableView.dataSource = self
@@ -35,27 +39,30 @@ class SearchListVc: BaseVC {
         employeesTableView.register(cellType: EmployeeCell.self)
     }
     
-    private func fetchSavedEmployee() {
-        let fetchRequest: NSFetchRequest<Employee> = Employee.fetchRequest()
-        do {
-            let savedCount = try coreDataStack.managedContext.count(for: fetchRequest)
-            if savedCount == 0 {
-                self.showMessage(message: "Empty", type: .error)
+    func setupInitialUI() {
+        employeesTableView.isHiddenIfNeeded = true
+        emptyView.isHiddenIfNeeded = true
+    }
+    func setupBinding() {
+        viewModel.onSuccessFetching = {[weak self] in
+            guard let self else { return }
+            if self.viewModel.getEmployees().isEmpty {
+                self.employeesTableView.isHiddenIfNeeded = true
+                self.emptyView.isHiddenIfNeeded = false
             } else {
-                let savedResults = try coreDataStack.managedContext.fetch(fetchRequest)
-               print(savedResults)
+                self.employeesTableView.reloadData()
+                self.employeesTableView.isHiddenIfNeeded = false
+                self.emptyView.isHiddenIfNeeded = true
+                
+                
             }
-            
-        } catch let error as NSError {
-            self.hideIndicator()
-            self.showMessage(message: "Error fetching: \(error), \(error.userInfo)", type: .error)
         }
     }
     
     @IBAction func addEmployeeButtonTapped(_ sender: Any) {
         let employeeformVC = SceneContainer.getEmployeeForm()
         self.navigationController?.pushViewController(employeeformVC, animated: true)
-
+        
     }
-   
+    
 }

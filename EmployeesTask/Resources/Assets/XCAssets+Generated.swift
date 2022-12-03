@@ -33,6 +33,7 @@ internal enum Asset {
   internal enum Images {
     internal static let accentColor = ColorAsset(name: "AccentColor")
     internal static let editProfile = ImageAsset(name: "edit_profile")
+    internal static let emptyData = ImageAsset(name: "empty_data")
     internal static let profileAvatar = ImageAsset(name: "profile_avatar")
   }
 }

@@ -43,22 +43,23 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mohamed Ahmed" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MN8-jw-trz">
-                                <rect key="frame" x="83" y="5" width="113.33333333333331" height="29"/>
+                                <rect key="frame" x="73" y="5" width="113.33333333333331" height="29"/>
                                 <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo" pointSize="15"/>
                                 <color key="textColor" name="item-black"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mahmoud@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nPT-Il-uc9">
-                                <rect key="frame" x="83" y="34" width="106.66666666666669" height="25"/>
+                                <rect key="frame" x="73" y="34" width="106.66666666666669" height="25"/>
                                 <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo" pointSize="11"/>
                                 <color key="textColor" systemColor="systemGray3Color"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BIJ-RL-ibU" userLabel="Edit">
-                                <rect key="frame" x="209" y="34" width="30" height="25"/>
+                                <rect key="frame" x="197" y="34" width="38" height="25"/>
                                 <color key="backgroundColor" name="main-blue"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="9rH-hE-Pub"/>
+                                    <constraint firstAttribute="width" constant="38" id="KOw-1i-zYw"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="13"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -70,11 +71,15 @@
                                         <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="editButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="jKG-Aw-vfP"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mec-3L-Pr2">
-                                <rect key="frame" x="244" y="34" width="34" height="25"/>
+                                <rect key="frame" x="240" y="34" width="38" height="25"/>
                                 <color key="backgroundColor" systemColor="systemRedColor"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="38" id="d3Y-Fx-0Zc"/>
                                     <constraint firstAttribute="height" constant="25" id="woV-Mx-paA"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="12"/>
@@ -87,9 +92,12 @@
                                         <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="deleteButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="P96-l7-Mu1"/>
+                                </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="o1s-Cj-NGV">
-                                <rect key="frame" x="83" y="64" width="190" height="40"/>
+                                <rect key="frame" x="73" y="64" width="200" height="40"/>
                                 <color key="backgroundColor" systemColor="systemRedColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="ekI-nj-DaN"/>
@@ -116,7 +124,7 @@
                             <constraint firstItem="mec-3L-Pr2" firstAttribute="centerY" secondItem="nPT-Il-uc9" secondAttribute="centerY" id="Xg7-S3-2y0"/>
                             <constraint firstAttribute="trailing" secondItem="o1s-Cj-NGV" secondAttribute="trailing" constant="10" id="bbU-ci-SNY"/>
                             <constraint firstItem="BIJ-RL-ibU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="nPT-Il-uc9" secondAttribute="trailing" constant="5" id="pZ3-1j-SWY"/>
-                            <constraint firstItem="MN8-jw-trz" firstAttribute="leading" secondItem="Yoc-6B-1ds" secondAttribute="trailing" constant="15" id="vsW-JU-369"/>
+                            <constraint firstItem="MN8-jw-trz" firstAttribute="leading" secondItem="Yoc-6B-1ds" secondAttribute="trailing" constant="5" id="vsW-JU-369"/>
                             <constraint firstItem="nPT-Il-uc9" firstAttribute="leading" secondItem="MN8-jw-trz" secondAttribute="leading" id="wcp-hi-l46"/>
                             <constraint firstItem="o1s-Cj-NGV" firstAttribute="leading" secondItem="nPT-Il-uc9" secondAttribute="leading" id="xqS-WD-A8e"/>
                             <constraint firstItem="Yoc-6B-1ds" firstAttribute="centerY" secondItem="GLt-cY-gAo" secondAttribute="centerY" id="xwP-18-Axj"/>
@@ -152,6 +160,11 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="employeeEmail" destination="nPT-Il-uc9" id="ePr-yW-7P2"/>
+                <outlet property="employeeName" destination="MN8-jw-trz" id="xPA-Er-TO2"/>
+                <outlet property="profileImageView" destination="Yoc-6B-1ds" id="16c-v9-1LY"/>
+            </connections>
             <point key="canvasLocation" x="-6.9230769230769225" y="-6.0426540284360186"/>
         </tableViewCell>
     </objects>
