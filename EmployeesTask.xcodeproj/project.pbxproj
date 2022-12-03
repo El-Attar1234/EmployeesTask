@@ -13,6 +13,7 @@
 		841F4A85293B9D0800BE87D1 /* SearchListVC+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841F4A84293B9D0800BE87D1 /* SearchListVC+Extension.swift */; };
 		841F4A87293BC71100BE87D1 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841F4A86293BC71100BE87D1 /* Strings.swift */; };
 		841F4A8F293BDCD400BE87D1 /* EmployeeCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841F4A8E293BDCD400BE87D1 /* EmployeeCell+Extension.swift */; };
+		841F4A92293BECB500BE87D1 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 841F4A91293BECB500BE87D1 /* IQKeyboardManagerSwift */; };
 		843856A2293B2FEA008371D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843856A1293B2FEA008371D2 /* AppDelegate.swift */; };
 		843856A4293B2FEA008371D2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843856A3293B2FEA008371D2 /* SceneDelegate.swift */; };
 		843856AC293B2FEA008371D2 /* EmployeesTask.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 843856AA293B2FEA008371D2 /* EmployeesTask.xcdatamodeld */; };
@@ -111,6 +112,7 @@
 			files = (
 				84385702293B4326008371D2 /* SwiftMessages in Frameworks */,
 				843856FF293B42FB008371D2 /* MBProgressHUD in Frameworks */,
+				841F4A92293BECB500BE87D1 /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,6 +504,7 @@
 			packageProductDependencies = (
 				843856FE293B42FB008371D2 /* MBProgressHUD */,
 				84385701293B4326008371D2 /* SwiftMessages */,
+				841F4A91293BECB500BE87D1 /* IQKeyboardManagerSwift */,
 			);
 			productName = EmployeesTask;
 			productReference = 8438569E293B2FEA008371D2 /* EmployeesTask.app */;
@@ -534,6 +537,7 @@
 			packageReferences = (
 				843856FD293B42FB008371D2 /* XCRemoteSwiftPackageReference "MBProgressHUD" */,
 				84385700293B4326008371D2 /* XCRemoteSwiftPackageReference "SwiftMessages" */,
+				841F4A90293BECB500BE87D1 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 			);
 			productRefGroup = 8438569F293B2FEA008371D2 /* Products */;
 			projectDirPath = "";
@@ -856,6 +860,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		841F4A90293BECB500BE87D1 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
 		843856FD293B42FB008371D2 /* XCRemoteSwiftPackageReference "MBProgressHUD" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/jdg/MBProgressHUD";
@@ -875,6 +887,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		841F4A91293BECB500BE87D1 /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 841F4A90293BECB500BE87D1 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
+		};
 		843856FE293B42FB008371D2 /* MBProgressHUD */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 843856FD293B42FB008371D2 /* XCRemoteSwiftPackageReference "MBProgressHUD" */;

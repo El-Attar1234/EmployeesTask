@@ -12,6 +12,7 @@ protocol SearchListViewModelProtocol: AnyObject, BaseViewModelProtocol {
     // MARK: - Observables
     var onSuccessFetching: (() -> Void)? { get set }
     var didsearched: (() -> Void)? { get set }
+    var deletedSuccessfully: (() -> Void)? { get set }
    
     // MARK: - ViewLifeCycle
     func viewWillAppear()
@@ -27,6 +28,7 @@ class SearchListViewModel: BaseViewModel, SearchListViewModelProtocol {
     // MARK: - Observables
     var onSuccessFetching: (() -> Void)?
     var didsearched: (() -> Void)?
+    var deletedSuccessfully: (() -> Void)?
     
     // MARK: - Properties
     lazy var coreDataStack = CoreDataStack(modelName: "EmployeesTask")
@@ -47,6 +49,8 @@ class SearchListViewModel: BaseViewModel, SearchListViewModelProtocol {
         }
         coreDataStack.managedContext.delete(employeeToRemove)
         coreDataStack.saveContext()
+        self.showMessage?("Employee Deleted Successfully", .success)
+        self.deletedSuccessfully?()
         
     }
     func search(text: String) {

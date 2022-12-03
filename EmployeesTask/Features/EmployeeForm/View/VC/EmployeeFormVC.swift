@@ -61,9 +61,13 @@ class EmployeeFormVC: BaseVC {
     }
     
     @IBAction func saveEmployee(_ sender: Any) {
-        let fullName = fullNameTextField.text ?? ""
-        let email = emailTextField.text ?? ""
-        viewModel.saveEmployee(fullName: fullName, email: email)
+        if let fullName = fullNameTextField.text, !fullName.isEmpty {
+            let email = emailTextField.text ?? ""
+            viewModel.saveEmployee(fullName: fullName, email: email)
+        } else {
+            self.showMessage(message: "Full Name is required", type: .error)
+        }
+       
     }
     
     @IBAction func editImageButtonTapped(_ sender: Any) {
@@ -74,7 +78,6 @@ class EmployeeFormVC: BaseVC {
         case .add:
             print("add")
         case .edit(let employee, _):
-            print("Data ->>>>> \(employee)")
             if let photoData = employee.photoData {
                 profileImage.image = UIImage(data: photoData)
             }

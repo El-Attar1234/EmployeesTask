@@ -59,25 +59,25 @@ class SearchListVc: BaseVC {
     func setupBinding() {
         viewModel.onSuccessFetching = {[weak self] in
             guard let self else { return }
-            if self.viewModel.getEmployees().isEmpty {
-                self.employeesTableView.isHiddenIfNeeded = true
-                self.emptyView.isHiddenIfNeeded = false
-            } else {
-                self.employeesTableView.reloadData()
-                self.employeesTableView.isHiddenIfNeeded = false
-                self.emptyView.isHiddenIfNeeded = true
-            }
+            self.updateView()
         }
         viewModel.didsearched = {[weak self] in
             guard let self else { return }
-            if self.viewModel.getEmployees().isEmpty {
-                self.employeesTableView.isHiddenIfNeeded = true
-                self.emptyView.isHiddenIfNeeded = false
-            } else {
-                self.employeesTableView.reloadData()
-                self.employeesTableView.isHiddenIfNeeded = false
-                self.emptyView.isHiddenIfNeeded = true
-            }
+            self.updateView()
+        }
+        viewModel.deletedSuccessfully = {[weak self] in
+            guard let self else { return }
+            self.updateView()
+        }
+    }
+    private func updateView() {
+        if self.viewModel.getEmployees().isEmpty {
+            self.employeesTableView.isHiddenIfNeeded = true
+            self.emptyView.isHiddenIfNeeded = false
+        } else {
+            self.employeesTableView.reloadData()
+            self.employeesTableView.isHiddenIfNeeded = false
+            self.emptyView.isHiddenIfNeeded = true
         }
     }
     
@@ -98,7 +98,6 @@ class SearchListVc: BaseVC {
         alert.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: {[weak self] _ in
             guard let self = self else { return }
             self.viewModel.delete(at: index)
-            self.employeesTableView.reloadData()
         }))
         alert.addAction(UIAlertAction(title: "No",
                                       style: .cancel))
