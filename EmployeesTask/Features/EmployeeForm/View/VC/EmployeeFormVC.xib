@@ -17,6 +17,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EmployeeFormVC" customModule="EmployeesTask" customModuleProvider="target">
             <connections>
+                <outlet property="profileImage" destination="riS-1m-i5E" id="agK-1w-2mp"/>
                 <outlet property="skillsCollectionView" destination="47s-f9-cG2" id="Zdz-YK-Unm"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -85,6 +86,9 @@
                                         <constraint firstAttribute="width" constant="34" id="lil-tj-6Sa"/>
                                     </constraints>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <connections>
+                                        <action selector="editImageButtonTapped:" destination="-1" eventType="touchUpInside" id="mMS-jE-XvM"/>
+                                    </connections>
                                 </button>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="SYm-zM-bmR">
                                     <rect key="frame" x="20" y="147" width="350" height="260"/>
@@ -214,6 +218,9 @@
                                         <constraint firstAttribute="height" constant="52" id="Kd0-L8-W7V"/>
                                     </constraints>
                                     <state key="normal" title="Save"/>
+                                    <connections>
+                                        <action selector="saveEmployee:" destination="-1" eventType="touchUpInside" id="xau-xm-Yrd"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>

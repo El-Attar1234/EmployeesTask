@@ -8,6 +8,7 @@
 import UIKit
 
 class EmployeeFormVC: BaseVC {
+    @IBOutlet private weak var profileImage: UIImageView!
     @IBOutlet private weak var skillsCollectionView: UICollectionView!
     
     weak var viewModel: EmployeeFormViewModelProtocol!
@@ -38,5 +39,85 @@ class EmployeeFormVC: BaseVC {
             self.skillsCollectionView.reloadData()
         }
     }
+    
+    @IBAction func saveEmployee(_ sender: Any) {
+        viewModel.saveEmployee()
+    }
+    
+    @IBAction func editImageButtonTapped(_ sender: Any) {
+        openImageSeletor()
+    }
+    
+}
 
+// MARK: - ImageSelection
+extension EmployeeFormVC {
+    
+    func openImageSeletor() {
+        let picker = UIImagePickerController()
+        picker.allowsEditing   = true
+        picker.delegate = self
+        let style: UIAlertController.Style = UIDevice.isIpad ? .alert : .actionSheet
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: style)
+        alert.addAction(UIAlertAction(title: "حذف الصورة", style: .destructive, handler: { _ in
+            self.showDeletelert()
+        }))
+      
+            alert.addAction(UIAlertAction(title: "الكاميرا", style: .default, handler: { _ in
+                if !UIDevice .isSimulator {
+                    picker.sourceType = .camera
+                    self.present(picker, animated: true, completion: nil)
+                } else {
+                    self.showMessage(message: "Simulatoe", type: .error)
+                }
+               
+            }))
+        
+        alert.addAction(UIAlertAction(title: "اختيار صورة", style: .default, handler: { _ in
+            picker.sourceType = .photoLibrary // the default
+            self.present(picker, animated: true, completion: nil)
+        }))
+        alert.addAction(UIAlertAction(title: "إلغاء", style: .cancel, handler: nil))
+      //  addActionSheetForiPad(actionSheet: alert)
+        self.present(alert, animated: true, completion: nil)
+    }
+    func showDeletelert() {
+        
+        let alert = UIAlertController(title: "L10n.Delete.Alret.title",
+                                      message: "L10n.Delete.Alret.message",
+                                      preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "L10n.Delete.Alret.yes", style: .destructive, handler: {[weak self] _ in
+            guard let self = self else { return }
+//            self.viewModel.selectedImageURL = nil
+//            self.viewModel.isImageRemoved = 1
+            self.profileImage.image = Asset.Images.profileAvatar.image
+        }))
+        alert.addAction(UIAlertAction(title: "L10n.Delete.Alret.no",
+                                      style: .cancel))
+        self.present(alert, animated: true, completion: nil)
+    }
+}
+
+extension EmployeeFormVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController,
+                               didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+      //  self.updateData = false
+        let editedImage   = info[UIImagePickerController.InfoKey.editedImage] as? UIImage
+        let originalImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+        var selectedImage = UIImage()
+        let uploadedImageURL: URL?
+        if let editedImage = editedImage {
+            profileImage.image = editedImage
+            selectedImage = editedImage
+        } else if let originalImage = originalImage {
+            selectedImage = originalImage
+            profileImage.image = originalImage
+        }
+        let data = selectedImage.pngData()
+        
+        viewModel.selectedImageData = data
+//        self.viewModel.isImageRemoved = 0
+        dismiss(animated: true, completion: nil)
+    }
 }

@@ -18,12 +18,12 @@ protocol EmployeeFormViewModelProtocol: AnyObject, BaseViewModelProtocol {
     func getSkills() -> [String]
     func isSelected(skill: String) -> Bool
     func addOrDelete(skill: String)
-    // func delete(skill: String)
-    
+    func saveEmployee()
+    var selectedImageData: Data? { get set }
 }
 
 class EmployeeFormViewModel: BaseViewModel, EmployeeFormViewModelProtocol {
-    
+  
     // MARK: - Observables
     var onSuccessFetching: (() -> Void)?
     
@@ -31,6 +31,7 @@ class EmployeeFormViewModel: BaseViewModel, EmployeeFormViewModelProtocol {
     lazy var coreDataStack = CoreDataStack(modelName: "EmployeesTask")
     var allSavedSkills: [String] = []
     var selectedSkills: [String] = ["iOS"]
+    var selectedImageData: Data? 
     
     // MARK: - ViewLifeCycle
     func viewDidLoad() {
@@ -52,7 +53,16 @@ class EmployeeFormViewModel: BaseViewModel, EmployeeFormViewModelProtocol {
             selectedSkills.append(skill)
         }
     }
-    
+    func saveEmployee() {
+        let employee = Employee(context: coreDataStack.managedContext)
+        employee.fullName = "mahmoud"
+        employee.photoData = selectedImageData
+        coreDataStack.saveContext()
+    }
+        
+}
+
+extension EmployeeFormViewModel {
     private func importJSONSkillsDataIfNeeded() {
         self.showLoader?()
         let fetchRequest: NSFetchRequest<SkillModel> = SkillModel.fetchRequest()
@@ -95,5 +105,4 @@ class EmployeeFormViewModel: BaseViewModel, EmployeeFormViewModelProtocol {
         self.showMessage?("Skills Fetched Successfully", .success)
         self.onSuccessFetching?()
     }
-    
 }
