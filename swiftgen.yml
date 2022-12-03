@@ -1,0 +1,11 @@
+ input_dir: EmployeesTask/Resources/
+ output_dir: EmployeesTask/Resources/
+
+# Assets(Images and colors)
+ xcassets:
+   inputs:
+     - Assets/Images.xcassets
+     - Assets/Colors.xcassets
+   outputs:
+     - templateName: swift5
+       output: Assets/XCAssets+Generated.swift
