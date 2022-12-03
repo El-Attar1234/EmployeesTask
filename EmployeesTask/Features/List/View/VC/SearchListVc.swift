@@ -7,12 +7,20 @@
 
 import UIKit
 
-class SearchListVc: UIViewController {
+class SearchListVc: BaseVC {
+    
+    weak var viewModel: SearchListViewModelProtocol!
+    init(viewModel: SearchListViewModelProtocol) {
+        super.init(baseViewModel: viewModel)
+        self.viewModel = viewModel
+    }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
 
 }

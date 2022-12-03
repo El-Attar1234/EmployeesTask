@@ -20,6 +20,12 @@
 		843856E7293B3EFA008371D2 /* ScenesContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843856E6293B3EFA008371D2 /* ScenesContainer.swift */; };
 		843856EE293B3F6B008371D2 /* SearchListVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843856EC293B3F6B008371D2 /* SearchListVc.swift */; };
 		843856EF293B3F6B008371D2 /* SearchListVc.xib in Resources */ = {isa = PBXBuildFile; fileRef = 843856ED293B3F6B008371D2 /* SearchListVc.xib */; };
+		843856F7293B427C008371D2 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843856F6293B427C008371D2 /* BaseView.swift */; };
+		843856FA293B4298008371D2 /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843856F9293B4298008371D2 /* BaseVC.swift */; };
+		843856FC293B42A8008371D2 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843856FB293B42A8008371D2 /* BaseViewModel.swift */; };
+		843856FF293B42FB008371D2 /* MBProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 843856FE293B42FB008371D2 /* MBProgressHUD */; };
+		84385702293B4326008371D2 /* SwiftMessages in Frameworks */ = {isa = PBXBuildFile; productRef = 84385701293B4326008371D2 /* SwiftMessages */; };
+		84385706293B44E6008371D2 /* SearchListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84385705293B44E6008371D2 /* SearchListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +44,10 @@
 		843856E6293B3EFA008371D2 /* ScenesContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenesContainer.swift; sourceTree = "<group>"; };
 		843856EC293B3F6B008371D2 /* SearchListVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListVc.swift; sourceTree = "<group>"; };
 		843856ED293B3F6B008371D2 /* SearchListVc.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchListVc.xib; sourceTree = "<group>"; };
+		843856F6293B427C008371D2 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		843856F9293B4298008371D2 /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
+		843856FB293B42A8008371D2 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		84385705293B44E6008371D2 /* SearchListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +55,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84385702293B4326008371D2 /* SwiftMessages in Frameworks */,
+				843856FF293B42FB008371D2 /* MBProgressHUD in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,10 +83,11 @@
 			isa = PBXGroup;
 			children = (
 				843856F0293B3FC4008371D2 /* App + Scene Delegates */,
-				843856E8293B3F16008371D2 /* Features */,
-				843856E2293B3EBA008371D2 /* Services */,
 				843856B9293B3202008371D2 /* Resources */,
-				843856AA293B2FEA008371D2 /* EmployeesTask.xcdatamodeld */,
+				843856F2293B4249008371D2 /* Base */,
+				843856E2293B3EBA008371D2 /* Services */,
+				843856E8293B3F16008371D2 /* Features */,
+				84385703293B4497008371D2 /* Data */,
 			);
 			path = EmployeesTask;
 			sourceTree = "<group>";
@@ -137,6 +150,7 @@
 		843856E9293B3F4D008371D2 /* List */ = {
 			isa = PBXGroup;
 			children = (
+				84385704293B44D2008371D2 /* ViewModel */,
 				843856EA293B3F54008371D2 /* View */,
 			);
 			path = List;
@@ -176,6 +190,48 @@
 			path = Configurations;
 			sourceTree = "<group>";
 		};
+		843856F2293B4249008371D2 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				843856F4293B4262008371D2 /* View */,
+				843856F3293B4252008371D2 /* ViewModel */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		843856F3293B4252008371D2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				843856FB293B42A8008371D2 /* BaseViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		843856F4293B4262008371D2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				843856F6293B427C008371D2 /* BaseView.swift */,
+				843856F9293B4298008371D2 /* BaseVC.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		84385703293B4497008371D2 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				843856AA293B2FEA008371D2 /* EmployeesTask.xcdatamodeld */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		84385704293B44D2008371D2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				84385705293B44E6008371D2 /* SearchListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -194,6 +250,10 @@
 			dependencies = (
 			);
 			name = EmployeesTask;
+			packageProductDependencies = (
+				843856FE293B42FB008371D2 /* MBProgressHUD */,
+				84385701293B4326008371D2 /* SwiftMessages */,
+			);
 			productName = EmployeesTask;
 			productReference = 8438569E293B2FEA008371D2 /* EmployeesTask.app */;
 			productType = "com.apple.product-type.application";
@@ -222,6 +282,10 @@
 				Base,
 			);
 			mainGroup = 84385695293B2FEA008371D2;
+			packageReferences = (
+				843856FD293B42FB008371D2 /* XCRemoteSwiftPackageReference "MBProgressHUD" */,
+				84385700293B4326008371D2 /* XCRemoteSwiftPackageReference "SwiftMessages" */,
+			);
 			productRefGroup = 8438569F293B2FEA008371D2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -293,13 +357,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				843856E5293B3EED008371D2 /* AppManager.swift in Sources */,
+				843856FC293B42A8008371D2 /* BaseViewModel.swift in Sources */,
+				84385706293B44E6008371D2 /* SearchListViewModel.swift in Sources */,
 				843856EE293B3F6B008371D2 /* SearchListVc.swift in Sources */,
 				843856BF293B3391008371D2 /* XCAssets+Generated.swift in Sources */,
 				843856AC293B2FEA008371D2 /* EmployeesTask.xcdatamodeld in Sources */,
 				843856E7293B3EFA008371D2 /* ScenesContainer.swift in Sources */,
 				843856A2293B2FEA008371D2 /* AppDelegate.swift in Sources */,
+				843856F7293B427C008371D2 /* BaseView.swift in Sources */,
 				843856C4293B357A008371D2 /* Strings.swift in Sources */,
 				843856A4293B2FEA008371D2 /* SceneDelegate.swift in Sources */,
+				843856FA293B4298008371D2 /* BaseVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -510,6 +578,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		843856FD293B42FB008371D2 /* XCRemoteSwiftPackageReference "MBProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jdg/MBProgressHUD";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		84385700293B4326008371D2 /* XCRemoteSwiftPackageReference "SwiftMessages" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftKickMobile/SwiftMessages";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		843856FE293B42FB008371D2 /* MBProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 843856FD293B42FB008371D2 /* XCRemoteSwiftPackageReference "MBProgressHUD" */;
+			productName = MBProgressHUD;
+		};
+		84385701293B4326008371D2 /* SwiftMessages */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 84385700293B4326008371D2 /* XCRemoteSwiftPackageReference "SwiftMessages" */;
+			productName = SwiftMessages;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		843856AA293B2FEA008371D2 /* EmployeesTask.xcdatamodeld */ = {

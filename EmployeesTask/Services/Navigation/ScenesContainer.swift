@@ -17,9 +17,9 @@ final class SceneContainer {
     }
     
         class func getSearchListVc() -> SearchListVc {
-            SearchListVc()
+            let viewModel = SearchListViewModel()
+            let vc = SearchListVc(viewModel: viewModel)
+            return vc
         }
     
 }
-
-
