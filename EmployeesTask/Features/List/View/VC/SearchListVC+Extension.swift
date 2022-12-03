@@ -19,18 +19,12 @@ extension SearchListVc: UITableViewDataSource, UITableViewDelegate {
         let employee = viewModel.getEmployees()[indexPath.item]
         cell.setup(employee: employee) { [weak self] in
             guard let self = self else { return }
-            print("edit")
+            self.navigateToForm(mode: .edit(employee))
         } deleteAction: { [weak self] in
             guard let self = self else { return }
             self.viewModel.delete(at: indexPath.item)
             tableView.reloadData()
         }
-
-//        cell.setup(model: item) { [weak self] in
-//            guard let self = self else { return }
-//            self.showDeletelert(id: item.id ?? 0)
-//
-//        }
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

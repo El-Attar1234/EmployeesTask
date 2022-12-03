@@ -22,8 +22,8 @@ final class SceneContainer {
         return vc
     }
     
-    class func getEmployeeForm() -> EmployeeFormVC {
-        let viewModel = EmployeeFormViewModel()
+    class func getEmployeeForm(formMode: FormMode) -> EmployeeFormVC {
+        let viewModel = EmployeeFormViewModel(formMode: formMode)
         let vc = EmployeeFormVC(viewModel: viewModel)
         return vc
     }

@@ -17,6 +17,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EmployeeFormVC" customModule="EmployeesTask" customModuleProvider="target">
             <connections>
+                <outlet property="emailTextField" destination="eYZ-hx-apV" id="BYE-N5-NBE"/>
+                <outlet property="fullNameTextField" destination="BT5-tn-U8c" id="v4V-DC-1OZ"/>
                 <outlet property="profileImage" destination="riS-1m-i5E" id="agK-1w-2mp"/>
                 <outlet property="skillsCollectionView" destination="47s-f9-cG2" id="Zdz-YK-Unm"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -152,7 +154,7 @@
                                                     <color key="textColor" name="item-black"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Please, Enter your E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eYZ-hx-apV" customClass="CustomReusableTextField" customModule="EmployeesTask" customModuleProvider="target">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Please, Enter your E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eYZ-hx-apV">
                                                     <rect key="frame" x="0.0" y="26.666666666666629" width="350" height="55"/>
                                                     <color key="backgroundColor" name="gray-background"/>
                                                     <constraints>

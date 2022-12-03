@@ -60,9 +60,12 @@ class SearchListVc: BaseVC {
     }
     
     @IBAction func addEmployeeButtonTapped(_ sender: Any) {
-        let employeeformVC = SceneContainer.getEmployeeForm()
+        navigateToForm(mode: .add)
+    }
+    
+    func navigateToForm(mode: FormMode) {
+        let employeeformVC = SceneContainer.getEmployeeForm(formMode: mode)
         self.navigationController?.pushViewController(employeeformVC, animated: true)
-        
     }
     
 }

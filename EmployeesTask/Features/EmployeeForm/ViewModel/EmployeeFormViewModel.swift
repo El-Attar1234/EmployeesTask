@@ -8,7 +8,10 @@
 import Foundation
 import CoreData
 
-
+enum FormMode {
+    case add
+    case edit(Employee)
+}
 
 protocol EmployeeFormViewModelProtocol: AnyObject, BaseViewModelProtocol {
     // MARK: - ViewLifeCycle
@@ -16,28 +19,39 @@ protocol EmployeeFormViewModelProtocol: AnyObject, BaseViewModelProtocol {
     
     // MARK: - Observables
     var onSuccessFetching: (() -> Void)? { get set }
+    var updatedAddedSuccessfully: ((FormMode) -> Void)? { get set }
     
+    func getFormMode() -> FormMode
     func getSkills() -> [String]
     func isSelected(skill: String) -> Bool
     func addOrDelete(skill: String)
-    func saveEmployee()
+    func saveEmployee(fullName: String, email: String)
     var selectedImageData: Data? { get set }
 }
 
 class EmployeeFormViewModel: BaseViewModel, EmployeeFormViewModelProtocol {
-  
+   
     // MARK: - Observables
     var onSuccessFetching: (() -> Void)?
+    var updatedAddedSuccessfully: ((FormMode) -> Void)?
     
     // MARK: - Properties
+    let formMode: FormMode
     lazy var coreDataStack = CoreDataStack(modelName: "EmployeesTask")
     var allSavedSkills: [String] = []
     var selectedSkills: [String] = ["iOS"]
-    var selectedImageData: Data? 
+    var selectedImageData: Data?
+    
+    init(formMode: FormMode) {
+        self.formMode = formMode
+    }
     
     // MARK: - ViewLifeCycle
     func viewDidLoad() {
         importJSONSkillsDataIfNeeded()
+    }
+    func getFormMode() -> FormMode {
+        formMode
     }
     func getSkills() -> [String] {
         allSavedSkills
@@ -55,13 +69,24 @@ class EmployeeFormViewModel: BaseViewModel, EmployeeFormViewModelProtocol {
             selectedSkills.append(skill)
         }
     }
-    func saveEmployee() {
-        let employee = Employee(context: coreDataStack.managedContext)
-        employee.fullName = "mahmoud"
-        employee.photoData = selectedImageData
+    func saveEmployee(fullName: String, email: String) {
+        switch formMode {
+        case .add:
+            let employee = Employee(context: coreDataStack.managedContext)
+            employee.fullName = fullName
+            employee.email = email
+            employee.photoData = selectedImageData
+           
+        case .edit(let employee):
+            employee.fullName = fullName
+            employee.email = email
+            employee.photoData = selectedImageData
+        }
         coreDataStack.saveContext()
+        updatedAddedSuccessfully?(formMode)
+       
     }
-        
+    
 }
 
 extension EmployeeFormViewModel {

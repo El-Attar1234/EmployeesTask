@@ -10,6 +10,9 @@ import UIKit
 class EmployeeFormVC: BaseVC {
     @IBOutlet private weak var profileImage: UIImageView!
     @IBOutlet private weak var skillsCollectionView: UICollectionView!
+    @IBOutlet private weak var fullNameTextField: UITextField!
+    @IBOutlet private weak var emailTextField: UITextField!
+    
     
     weak var viewModel: EmployeeFormViewModelProtocol!
     init(viewModel: EmployeeFormViewModelProtocol) {
@@ -24,7 +27,8 @@ class EmployeeFormVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSkillsCollectionView()
-        
+        fillData()
+        setupBinding()
         viewModel.viewDidLoad()
     }
     
@@ -36,16 +40,43 @@ class EmployeeFormVC: BaseVC {
     func setupBinding() {
         viewModel.onSuccessFetching = {[weak self] in
             guard let self else { return }
+          
             self.skillsCollectionView.reloadData()
+        }
+        viewModel.updatedAddedSuccessfully = {[weak self] formMode in
+            guard let self else { return }
+            switch formMode {
+            case .add:
+                self.showMessage(message: "Added Successfully", type: .success)
+            case .edit:
+                self.showMessage(message: "Updated Successfully", type: .success)
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                self.navigationController?.popViewController(animated: true)
+            }
         }
     }
     
     @IBAction func saveEmployee(_ sender: Any) {
-        viewModel.saveEmployee()
+        let fullName = fullNameTextField.text ?? ""
+        let email = emailTextField.text ?? ""
+        viewModel.saveEmployee(fullName: fullName, email: email)
     }
     
     @IBAction func editImageButtonTapped(_ sender: Any) {
         openImageSeletor()
+    }
+    func fillData() {
+        switch self.viewModel.getFormMode() {
+        case .add:
+            print("add")
+        case .edit(let employee):
+            if let photoData = employee.photoData {
+                profileImage.image = UIImage(data: photoData)
+            }
+            fullNameTextField.text = employee.fullName
+            emailTextField.text = employee.email
+        }
     }
     
 }

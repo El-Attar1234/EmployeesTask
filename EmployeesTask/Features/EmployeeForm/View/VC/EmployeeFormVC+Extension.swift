@@ -11,7 +11,7 @@ import UIKit
 extension EmployeeFormVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return  viewModel.getSkills().count
+        return viewModel.getSkills().count
     }
     
     func collectionView(_ collectionView: UICollectionView,
